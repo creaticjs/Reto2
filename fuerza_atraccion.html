@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fuerza de atraccion</title>
+</head>
+<body>
+    <p>Fuerza de atracción entre dos masas</p><br>
+    <p>Masa cuerpo 1:</p><br>
+    <input type="text" id="masa1"><br>
+    <p>Masa cuerpo 2:</p><br>
+    <input type="text" id="masa2"><br>
+    <p>Distancia entre ellos:</p><br>
+    <input type="text" id="distancia"><br>
+    <button onclick="calcular()">Calcular</button><br><br>
+    <input type="text" id="fuerza" size="30">
+    
+    <script >
+        var G = 6.673 / Math.pow(10,8);
+        console.log(G);
+        function calcular() {
+            
+            var f=0;
+            var resultado = document.getElementById("fuerza"); 
+            var masa1 = parseFloat(document.getElementById("masa1").value);
+            var masa2 = parseFloat(document.getElementById("masa2").value);
+            var distancia = parseFloat(document.getElementById("distancia").value);
+            
+            console.log(masa1);
+            console.log(masa2);
+            console.log(distancia);
+           
+            f = (G*masa1*masa2)/Math.pow(distancia,2);
+            console.log(f);
+       
+            resultado.value = "El resultado es:"+ f + "dinas";
+                
+    }
+    </script>
+</body>
+</html>

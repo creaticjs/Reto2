@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dias del mes</title>
+</head>
+<body>
+    <p>Dias del mes</p><br>
+    <p>Año(aaaa):</p><br>
+    <input type="text" id="anio"><br>
+    <p>Mes(mm):</p><br>
+    <input type="text" id="mes"><br>
+    <button onclick="calcular()">Calcular</button><br><br>
+    <input type="text" id="fecha" size="30">
+    
+    <script >
+               
+        function calcular() {
+
+            var d;          
+            var a = parseInt(document.getElementById("anio").value); 
+            var m = parseInt(document.getElementById("mes").value);
+            var resultado = document.getElementById("fecha");
+
+            if (a%100 == 0 && a%400 == 0) {
+                d = dia_mes(m);
+                if (m == 2) {
+                    d ++;
+                } 
+            } 
+            else if(a%4 == 0 && a%100 > 0){
+                d = dia_mes(m);
+                if (m == 2) {
+                    d ++;
+                } 
+            }
+            else {
+                d = dia_mes(m);
+            }
+
+            resultado.value = "El mes " + m + " tiene " + d + " dias";
+        }
+
+        function dia_mes(mes) {
+            if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) {
+                dias = 31;
+            } 
+            else if (mes == 4 || mes == 6 || mes == 9 || mes == 11){
+                dias = 30;
+            }
+            else if (mes == 2){
+                dias = 28;
+            }
+            return dias;
+        }
+    </script>
+</body>
+</html>

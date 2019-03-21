@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Salario</title>
+</head>
+<body>
+    <p>Salario del trabajador:</p><br>
+    <p>Numero de horas trabajadas:</p><br>
+    <input type="text" id="numero"><br>
+    <p>Valor de la hora:</p><br>
+    <input type="text" id="tasa"><br>
+    <button onclick="calcular()">Calcular</button><br><br>
+    <input type="text" id="salario" size="30">
+    
+    <script >
+               
+        function calcular() {
+
+            var s; 
+            var extra;         
+            var num = parseInt(document.getElementById("numero").value); 
+            var valor = parseFloat(document.getElementById("tasa").value); 
+            var resultado = document.getElementById("salario");
+
+            if (num < 38) {
+                s = num * valor;
+            } 
+            else {
+                extra = (valor * 0.5) + valor;
+                s = (37 * valor) + (num - 37) * extra;
+            }
+            
+            if (s > 50000) {
+                s = s - (s * 0.1);
+            } 
+                  
+            resultado.value = "El salario es " + s;
+            
+
+        }
+
+        
+    </script>
+</body>
+</html>

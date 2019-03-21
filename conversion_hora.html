@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hora</title>
+</head>
+<body>
+    <p>Conversion notacion horario 24 horas en 12 horas </p><br>
+    <p>Hora (formato hh:mm):</p><br>
+    <input type="text" id="hora24"><br>
+    <button onclick="calcular()">Convertir</button><br><br>
+    <input type="text" id="hora12" size="10">
+    
+    <script >
+               
+        function calcular() {
+            
+            var r=0;
+            var h;
+            var m;
+            var hora24 = document.getElementById("hora24").value; 
+            var resultado = document.getElementById("hora12");
+            
+            if (hora24.length==5){
+                h=hora24.charAt(0)+hora24.charAt(1);
+                h=parseInt(h);
+
+                if (h>=1 && h<=11) {
+                    resultado.value = "Hora: "+ h+":"+hora24.charAt(3)+hora24.charAt(4)+" am";
+                } else if (h>=13 && h<=23){
+                    h=h-12;
+                    
+                    resultado.value = "Hora: "+ h+":"+hora24.charAt(3)+hora24.charAt(4)+" pm";
+                }
+                else if (h==12) {
+                    m=hora24.charAt(3)+hora24.charAt(4);
+                    m=parseInt(m);
+                    if (m==0) {
+                        resultado.value = "Hora: "+ h+":"+hora24.charAt(3)+hora24.charAt(4)+" am";
+                    } else {
+                        resultado.value = "Hora: "+ h+":"+hora24.charAt(3)+hora24.charAt(4)+" pm";
+                    }
+                }
+                else if (h==24) {
+                    m=hora24.charAt(3)+hora24.charAt(4);
+                    m=parseInt(m);
+                    if (m==0) {
+                        h=h-12;
+                        resultado.value = "Hora: "+ h+":"+hora24.charAt(3)+hora24.charAt(4)+" pm";
+                    } else {
+                        h=0;
+                        resultado.value = "Hora: "+ h+":"+hora24.charAt(3)+hora24.charAt(4)+" am";
+                    }
+                }
+                else if (h==0) {
+                    h=12;
+                        resultado.value = "Hora: "+ h+":"+hora24.charAt(3)+hora24.charAt(4)+" am";
+                }
+            }
+            else{
+                alert("Ingrese una hora con formato hh:mm por ejemplo 09:17");
+            }               
+         }
+    </script>
+</body>
+</html>

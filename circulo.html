@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Circulo</title>
+</head>
+<body>
+    <p>Radio:</p><br>
+    <input type="text" id="radio"><br>
+    <button onclick="diametro()">Diametro</button>
+    <button onclick="circunferencia()">Circunferencia</button>
+    <button onclick="area()">Area</button><br><br>
+    <input type="text" id="resultado" size="30">
+    
+    <script >
+        var pi = 3.141516;
+        var resul = 0;
+
+        function diametro() {
+            
+            var d=0;
+            var resultado = document.getElementById("resultado"); 
+            var radio = parseFloat(document.getElementById("radio").value);
+            console.log(radio);
+                       
+            d = 2 * radio;
+            console.log(d);
+            
+            resultado.value = "El resultado es: "+ d;
+            return d;
+        }
+
+        function circunferencia() {
+            
+            var c=0;
+            var d=0;
+            
+            d = diametro();
+            c = pi * d;
+            console.log(c);
+
+            resultado.value = "El resultado es: "+ c;
+                          
+        }
+
+        function area() {
+            
+            var a=0;
+            var resultado = document.getElementById("resultado"); 
+            var radio = parseFloat(document.getElementById("radio").value);
+            console.log(radio);
+                       
+            a = pi * Math.pow(radio,2);
+            console.log(a);
+            
+            resultado.value = "El resultado es: "+ a;
+            
+        }
+
+            
+    </script>
+</body>
+</html>

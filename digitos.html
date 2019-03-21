@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dados</title>
+</head>
+<body>
+    <p>Aproximacion de los dados</p><br>
+    <p>Dado A:</p><br>
+    <input type="text" id="A"><br>
+    <p>Dado B:</p><br>
+    <input type="text" id="B"><br>
+    <p>Dado C:</p><br>
+    <input type="text" id="C"><br>
+    <p>Dado D:</p><br>
+    <input type="text" id="D"><br>
+    <button onclick="calcular()">Aproximar</button><br><br>
+    <input type="text" id="resultado" size="15">
+    
+    <script >
+        
+
+        function calcular() {
+                   
+            var n;
+            var r;
+            var resultado = document.getElementById("resultado"); 
+            var numA = document.getElementById("A").value;
+            var numB = document.getElementById("B").value;
+            var numC = document.getElementById("C").value;
+            var numD = document.getElementById("D").value;
+            
+            n = numA + numB + numC + numD;
+            n = parseInt(n);
+
+            r = Math.round(n/100);
+            r= r*100;
+                                   
+            resultado.value = r;
+                          
+        }
+
+
+            
+    </script>
+</body>
+</html>

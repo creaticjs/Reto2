@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edad</title>
+</head>
+<body>
+    <p>Calculo de la edad</p><br>
+    <p>Fecha de nacimiento(dd/mm/aaaa):</p><br>
+    <input type="text" id="fecha_n"><br>
+    <p>Fecha de actual(dd/mm/aaaa):</p><br>
+    <input type="text" id="fecha_a"><br>
+    <button onclick="calcular()">Calcular</button><br><br>
+    <input type="text" id="edad" size="30">
+    
+    <script >
+               
+        function calcular() {
+            
+            var f;
+            var mesN;
+            var aN;
+            var dN;
+            var mesA;
+            var aA;
+            var dA;
+            var edad;
+            var fechaN = document.getElementById("fecha_n").value;
+            var fechaA = document.getElementById("fecha_a").value; 
+            var resultado = document.getElementById("edad");
+
+            mesN = fechaN.slice(3,-5);
+            mesN = parseInt(mesN);
+            console.log(mesN);
+            dN = fechaN.slice(0,-8);
+            dN = parseInt(dN);
+            console.log(dN);
+            aN = fechaN.slice(-4);
+            aN = parseInt(aN);
+            console.log(aN);
+
+            mesA = fechaA.slice(3,-5);
+            mesA = parseInt(mesA);
+            console.log(mesA);
+            dA = fechaA.slice(0,-8);
+            dA = parseInt(dA);
+            console.log(dA);
+            aA = fechaA.slice(-4);
+            aA = parseInt(aA);
+            console.log(aA);
+
+            if (aA > aN) {
+                if (mesA >= mesN) {
+                    edad = dia(dA,dN,aA,aN);
+                    console.log(edad);
+                    resultado.value = "La edad actual es: " + edad + "años";
+                    
+                } else {
+                    edad = (aA - 1) - aN; 
+                    edadCompararcion(edad,dA,dN,mesA,mesN);
+                }
+                
+                
+            } else if (aA < aN){
+                edad = (aA - 1) - aN; 
+                edadCompararcion(edad,dA,dN,mesA,mesN);
+            }
+            else if (aA = aN){
+                edad = dia(dA,dN,mesA,mesN);
+                resultado.value = "La edad actual es: " + edad + " meses y " + dA + "dias";
+            }
+            else{
+                alert("La fecha actual debe ser mayor que la fecha de nacimiento");
+            }
+            
+        }    
+
+        function dia(diaA,diaN,aa,an) {
+            var e;
+            if (diaA >= diaN) {
+                e = aa - an;
+            } else {
+                e = (aa - 1) - an;
+            }
+            return e;
+        }
+
+        function edadCompararcion (ed,diaA,diaN,ma,mn) {
+
+            var resultado = document.getElementById("edad");
+            var dia;
+           
+            if (ed > 0) {
+                console.log(ed);
+                resultado.value = "La edad actual es: " + ed + " años";
+            } else {
+                if (diaA >= diaN) {
+                    ed = 12 - mn + ma;
+                    dia = diaA - diaN;
+                } else {
+                    ed = 11 - mn + ma;
+                    dia = diaA;
+                }
+                resultado.value = "La edad actual es: " + ed + " meses y " + dia + "dias";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fecha</title>
+</head>
+<body>
+    <p>Conversion notacion normal de fecha</p><br>
+    <p>Fecha (formato ejemplo: 12, Febrero 2019):</p><br>
+    <input type="text" id="fecha"><br>
+    <button onclick="calcular()">Convertir</button><br><br>
+    <input type="text" id="fecha2" size="50">
+    
+    <script >
+               
+        function calcular() {
+            
+            var f;
+            var mes;
+            var a;
+            var d;
+            var fecha1 = document.getElementById("fecha").value; 
+            var resultado = document.getElementById("fecha2");
+
+            mes = fecha1.slice(4,-5);
+            mes = mes.toLowerCase();
+            d = fecha1.charAt(0)+fecha1.charAt(1);
+            d = parseInt(d);
+            a = fecha1.slice(-4);
+            
+            if (mes == "enero") {
+                mes = 1;
+                mesImpar();
+            } 
+            else if (mes == "febrero"){
+                mes = 2;
+                if (d>0 && d<=28) {
+                    
+                } else {
+                    alert("El dia ingresado no es correcto");
+                }
+            }
+            else if (mes == "marzo"){
+                mes = 3;
+                mesImpar();
+            }
+            else if (mes == "abril"){
+                mes = 4;
+                mesPar();
+            }
+            else if (mes == "mayo"){
+                mes = 5;
+                mesImpar();
+            }
+            else if (mes == "junio"){
+                mes = 6;
+                mesPar();
+            }
+            else if (mes == "julio"){
+                mes = 7;
+                mesImpar();
+            }
+            else if (mes == "agosto"){
+                mes = 8;
+                mesImpar();
+            }
+            else if (mes == "septiembre"){
+                mes = 9;
+                mesPar();
+            }
+            else if (mes == "octubre"){
+                mes = 10;
+                mesImpar();
+            }
+            else if (mes == "noviembre"){
+                mes = 11;
+                mesPar();
+            }
+            else if (mes == "diciembre"){
+                mes = 12;
+                mesImpar();
+            }
+            else{
+                alert("El mes ingresado está mal escrito");
+            }
+
+            f=d+" "+mes+" "+a;
+            resultado.value="La fecha es: "+f;
+                       
+         }
+        
+         function mesImpar(){
+            if (d>0 && d<=31) {
+                    
+                } else {
+                    alert("El día ingresado no es correcto");
+                }
+         }
+         function mesPar(){
+            if (d>0 && d<=30) {
+                    
+                } else {
+                    alert("El día ingresado no es correcto");
+                }
+         }
+    </script>
+</body>
+</html>

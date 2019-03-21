@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Números romanos</title>
+</head>
+<body>
+    <p>Conversión de números arabigos a romanos</p><br>
+    <p>Número:</p><br>
+    <input type="text" id="num"><br>
+    <button onclick="calcular()">Convertir</button><br><br>
+    <input type="text" id="resultado" size="30">
+    
+    <script >
+        var r = " ";
+
+        function calcular() {
+                   
+            var n=0;
+            var resultado = document.getElementById("resultado"); 
+            var numA = parseInt(document.getElementById("num").value);
+            console.log(numA);
+                                   
+            n = parseInt(numA / 1000);
+            console.log(n);
+            
+            for (var i = 0; i<n; i++) {
+                r = r + "M";  
+            }
+            console.log(r);
+            
+            numA = numA % 1000;
+            console.log(numA);
+
+            n = parseInt(numA / 100);
+            console.log(n);
+
+            comparar(n,"C","D","M");
+            console.log(r);
+
+            numA = numA % 100;
+            console.log(numA);
+
+            n = parseInt(numA / 10);
+            console.log(n);
+
+            comparar(n,"X","L","C");
+            console.log(r);
+
+            numA =  numA % 10;
+            console.log(numA);
+
+            n = numA;
+            console.log(n);
+
+            comparar(n,"I","V","X");
+            console.log(r);
+           
+            resultado.value = "El resultado es: "+ r;
+            
+        }
+
+        function comparar(d,ls,lp,ld) {
+            
+            if (d == 5) {
+                r = r + lp;
+            } 
+            else if (d == 4){
+                r = r + ls + lp;
+            }
+            else if (d == 4){
+                r = r + ls + lp;
+            }
+            else if (d == 9){
+                r = r + lp + ld;
+            }
+            else if (d>5 && d<9){
+                r = r + lp;
+                for (i = 1; i<=d; i++) {
+                     r = r + ld; 
+                 }
+            }
+            else if (d>=1 && d<=3){
+                for (i = 1; i<=d; i++) {
+                     r = r + ls; 
+                 }
+            }
+            else if (d == 0){
+                r = r;
+            }
+                          
+        }
+
+
+            
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Numero</title>
+</head>
+<body>
+    <p>Numero:</p><br>
+    <input type="text" id="numero"><br>
+    <button onclick="calcular()">Verificar</button><br><br>
+    <input type="text" id="num2" size="30">
+    
+    <script >
+               
+        function calcular() {
+
+            var d;          
+            var num = parseFloat(document.getElementById("numero").value); 
+            var resultado = document.getElementById("num2");
+
+            if (num == 0) {
+                resultado.value = "El numero es igual a cero";
+            } 
+            else if (num > 0){
+                resultado.value = "El numero es positivo";
+            }
+            else{
+                resultado.value = "El numero es negativo";
+            }
+
+        }
+
+        
+    </script>
+</body>
+</html>

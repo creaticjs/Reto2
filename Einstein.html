@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Einstein</title>
+</head>
+<body>
+    <p>Masa:</p><br>
+    <input type="text" id="masa"><br>
+    <button onclick="calcular()">Calcular</button><br><br>
+    <input type="text" id="resultado" size="30">
+    
+    <script >
+        var c = 2.997925 * Math.pow(10,8);
+        var resul = 0;
+
+        function calcular() {
+            
+            var e=0;
+            var resultado = document.getElementById("resultado"); 
+            var masa1 = parseFloat(document.getElementById("masa").value);
+            
+            e = masa1 * Math.pow(c,2);
+            console.log(e);
+            e = e * Math.pow(100,2);
+
+            resultado.value = "El resultado es:"+ e+" ergios";
+        }
+
+        
+    </script>
+</body>
+</html>

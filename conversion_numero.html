@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Números</title>
+</head>
+<body>
+    <p>Conversion notacion en letras de un número</p><br>
+    <p>Número (formato escriba el numero en letras terminando en punto):</p><br>
+    <input type="text" id="numero" size="50"><br>
+    <button onclick="calcular()">Convertir</button><br><br>
+    <input type="text" id="num2" size="50">
+    
+    <script >
+               
+        function calcular() {
+            
+            var numero=0;
+            var j=0;
+            var n = [];
+            var num1 = document.getElementById("numero").value; 
+            var resultado = document.getElementById("num2");
+
+            num1 = num1.toLowerCase();
+            n = num1.split(" ");
+            console.log(n);
+
+            for (var i of n) {
+                if (n[j] == "ciento") {
+                    numero=100;
+                } 
+                else if (n[j] == "doscientos"){
+                    numero=200;
+                }
+                else if (n[j] == "trescientos"){
+                    numero=300;
+                }
+                else if (n[j] == "cuatrocientos"){
+                    numero=400;
+                }
+                else if (n[j] == "quinientos"){
+                    numero=500;
+                }
+                else if (n[j] == "seiscientos"){
+                    numero=600;
+                }
+                else if (n[j] == "setecientos"){
+                    numero=700;
+                }
+                else if (n[j] == "ochocientos"){
+                    numero=800;
+                }
+                else if (n[j] == "novecientos"){
+                    numero=900;
+                }
+                else if (n[j] == "diez"){
+                    numero=numero+10;
+                }
+                else if (n[j] == "once"){
+                    numero=numero+11;
+                }
+                else if (n[j] == "doce"){
+                    numero=numero+12;
+                }
+                else if (n[j] == "trece"){
+                    numero=numero+13;
+                }
+                else if (n[j] == "catorce"){
+                    numero=numero+14;
+                }
+                else if (n[j] == "quince"){
+                    numero=numero+15;
+                }
+                else if (n[j] == "dieciséis"){
+                    numero=numero+16;
+                }
+                else if (n[j] == "diecisiete"){
+                    numero=numero+17;
+                }
+                else if (n[j] == "dieciocho"){
+                    numero=numero+10;
+                }
+                else if (n[j] == "diecinueve"){
+                    numero=numero+19;
+                }
+                else if (n[j] == "veinte"){
+                    numero=numero+20;
+                }
+                else if (n[j] == "ventiuno"){
+                    numero=numero+21;
+                }
+                else if (n[j] == "ventidós"){
+                    numero=numero+22;
+                }
+                else if (n[j] == "ventitrés"){
+                    numero=numero+23;
+                }
+                else if (n[j] == "veticuatro"){
+                    numero=numero+24;
+                }
+                else if (n[j] == "venticinco"){
+                    numero=numero+25;
+                }
+                else if (n[j] == "ventiséis"){
+                    numero=numero+26;
+                }
+                else if (n[j] == "ventisiete"){
+                    numero=numero+27;
+                }
+                else if (n[j] == "ventiocho"){
+                    numero=numero+28;
+                }
+                else if (n[j] == "ventinueve"){
+                    numero=numero+29;
+                }
+                else if (n[j] == "treinta"){
+                    numero=numero+30;
+                }
+                else if (n[j] == "cuarenta"){
+                    numero=numero+40;
+                }
+                else if (n[j] == "cincuenta"){
+                    numero=numero+50;
+                }
+                else if (n[j] == "sesenta"){
+                    numero=numero+60;
+                }
+                else if (n[j] == "setenta"){
+                    numero=numero+70;
+                }
+                else if (n[j] == "ochenta"){
+                    numero=numero+80;
+                }
+                else if (n[j] == "noventa"){
+                    numero=numero+90;
+                }
+                else if (n[j] == "uno"){
+                    numero=numero+1;
+                }
+                else if (n[j] == "dos"){
+                    numero=numero+2;
+                }
+                else if (n[j] == "tres"){
+                    numero=numero+3;
+                }
+                else if (n[j] == "cuatro"){
+                    numero=numero+4;
+                }
+                else if (n[j] == "cinco"){
+                    numero=numero+5;
+                }
+                else if (n[j] == "seis"){
+                    numero=numero+6;
+                }
+                else if (n[j] == "siete"){
+                    numero=numero+7;
+                }
+                else if (n[j] == "ocho"){
+                    numero=numero+8;
+                }
+                else if (n[j] == "nueve"){
+                    numero=numero+9;
+                }
+                                
+                j++;
+                console.log(numero);
+                
+            }
+            resultado.value="El número es: "+ numero;
+            
+            
+         }
+    </script>
+</body>
+</html>

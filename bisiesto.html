@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bisisesto</title>
+</head>
+<body>
+    <p>Año bisiesto</p><br>
+    <p>Año(aaaa):</p><br>
+    <input type="text" id="anio"><br>
+    <button onclick="calcular()">Verificar</button><br><br>
+    <input type="text" id="fecha" size="30">
+    
+    <script >
+               
+        function calcular() {
+            
+            
+            var a = parseInt(document.getElementById("anio").value); 
+            var resultado = document.getElementById("fecha");
+
+            if (a%100 == 0 && a%400 == 0) {
+                resultado.value = "El año " + a + "es bisiesto";
+            } 
+            else if(a%4 == 0 && a%100 > 0){
+                resultado.value = "El año " + a + "es bisiesto";
+            }
+            else {
+                resultado.value = "El año " + a + "no es bisiesto";
+            }
+        }
+    </script>
+</body>
+</html>

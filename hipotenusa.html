@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hipotenusa</title>
+</head>
+<body>
+    <p>Calculo de la hipotenusa de un triángulo rectangulo</p><br>
+    <p>Lado a:</p><br>
+    <input type="text" id="ladoa"><br>
+    <p>Lado b:</p><br>
+    <input type="text" id="ladob"><br>
+    <button onclick="calcular()">Calcular</button><br><br>
+    <input type="text" id="hipotenusa" size="30">
+    
+    <script >
+               
+        function calcular() {
+            
+            var r=0;
+            var a = parseFloat(document.getElementById("ladoa").value); 
+            var b = parseFloat(document.getElementById("ladob").value);
+            var resultado = document.getElementById("hipotenusa");
+                               
+            if (a>0 && b>0){
+                r = Math.sqrt(Math.pow(a,2)+Math.pow(b,2));
+                console.log(r);
+                resultado.value = r;
+            }
+            else{
+                alert("Alguno de los lados tiene valor cero");
+            }
+                            
+         }
+    </script>
+</body>
+</html>

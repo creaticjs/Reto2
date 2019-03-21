@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ecuaciones</title>
+</head>
+<body>
+    <p>Resolucion de ecuaciones lineales</p><br>
+    <p>a:</p>
+    <input type="text" id="a"><br>
+    <p>b:</p>
+    <input type="text" id="b"><br>
+    <p>c:</p>
+    <input type="text" id="c"><br>
+    <p>d:</p>
+    <input type="text" id="d"><br>
+    <p>e:</p>
+    <input type="text" id="e"><br>
+    <p>f:</p>
+    <input type="text" id="f"><br>
+    <button onclick="calcular()">Calcular</button><br><br>
+    <input type="text" id="resultado" size="25">
+    
+    <script >
+        
+
+        function calcular() {
+                   
+            var x;
+            var y;
+            var resultado = document.getElementById("resultado"); 
+            var a = parseInt(document.getElementById("a").value);
+            var b = parseInt(document.getElementById("b").value);
+            var c = parseInt(document.getElementById("d").value);
+            var d = parseInt(document.getElementById("d").value);
+            var e = parseInt(document.getElementById("e").value);
+            var f = parseInt(document.getElementById("f").value);
+            console.log(f);
+            
+            x = (c*e - b*f) / (a*e -b*d);
+
+            y = (a*f - c*d) / (a*e -b*d);
+                                   
+            resultado.value = "x = "+ x +"  y = "+ y;
+                          
+        }
+
+
+            
+    </script>
+</body>
+</html>

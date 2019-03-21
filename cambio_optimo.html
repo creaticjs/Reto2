@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cambio óptimo</title>
+</head>
+<body>
+    <p>Cambio óptimo</p><br>
+    <p>Cantidad de dinero de cambio:</p><br>
+    <input type="text" id="numero" size="50"><br>
+    <button onclick="calcular()">Cambio</button><br><br>
+    <input type="text" id="num2" size="150">
+    
+    <script >
+               
+        class peseta {
+            constructor(c, de){
+                this.cantidad = c;
+                this.denom = de;
+            }
+        }
+               function calcular() {
+            
+            var n=0;
+            //var j=0;
+            var d = [];
+            var r = " ";
+            var dinero = parseInt(document.getElementById("numero").value); 
+            var resultado = document.getElementById("num2");
+
+            n = parseInt(dinero/10000);
+            if (n > 0) {
+                d.push( new peseta(n," Billetes de 10.000") );
+                dinero = dinero % 10000;
+            }
+
+            n = parseInt(dinero/5000);
+            if (n > 0) {
+                d.push( new peseta(n," Billetes de 5.000") );
+                dinero = dinero % 5000;
+                
+            }
+
+            n = parseInt(dinero/2000);
+            if (n > 0) {
+                d.push( new peseta(n," Billetes de 2.000") );
+                dinero = dinero % 2000;
+                
+            }
+
+            n = parseInt(dinero/1000);
+            if (n > 0) {
+                d.push( new peseta(n," Billetes de 1.000") );
+                dinero = dinero % 1000;
+                
+            }
+
+            n = parseInt(dinero/500);
+            if (n > 0) {
+                d.push( new peseta(n," Monedas de 500") );
+                dinero = dinero % 500;
+            }
+
+            n = parseInt(dinero/200);
+            if (n > 0) {
+                d.push( new peseta(n," Monedas de 200") );
+                dinero = dinero % 200;
+                
+            }
+
+            n = parseInt(dinero/100);
+            if (n > 0) {
+                d.push( new peseta(n," Monedas de 100") );
+                dinero = dinero % 100;
+                
+            }
+
+            n = parseInt(dinero/50);
+            if (n > 0) {
+                d.push( new peseta(n," Monedas de 50") );
+                dinero = dinero % 50;
+                
+            }
+
+            n = parseInt(dinero/25);
+            if (n > 0) {
+                d.push( new peseta(n," Monedas de 25") );
+                dinero = dinero % 25;
+                
+            }
+
+            n = parseInt(dinero/10);
+            
+            if (n > 0) {
+                d.push( new peseta(n," Monedas de 10") );
+                dinero = dinero % 10;
+                
+            }
+
+            n = parseInt(dinero/5);
+            if (n > 0) {
+                d.push( new peseta(n," Monedas de 5") );
+                dinero = dinero % 5;
+                
+            }
+
+            n = parseInt(dinero/2);
+            if (n > 0) {
+                d.push( new peseta(n," Monedas de 2") );
+                dinero = dinero % 2;
+                
+            }
+
+            n = dinero;
+            if (n > 0) {
+                d.push( new peseta(n," Monedas de 1") );
+                
+            }
+            
+            
+            for (var i of d) {
+                
+                r = r + ", " + i.cantidad + i.denom;
+    
+            }
+            resultado.value = r;
+            
+            
+         }
+    </script>
+</body>
+</html>
