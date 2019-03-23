@@ -103,14 +103,18 @@
             </div>
             
             <br> <br> <br>
-
-    <p>Radio:</p><br>
-    <input type="text" id="radio"><br>
-    <a class="waves-effect waves-light btn" onclick="diametro()">Diametro</a>
-    <a class="waves-effect waves-light btn" onclick="circunferencia()">Circunferencia</a>
-    <a class="waves-effect waves-light btn" onclick="area()">Área</a><br><br>
-    <input type="text" id="resultado" size="30">
-    
+            <div class="container">
+                <div class="row">
+                    <div class="col s3 offset-s3"><span class="flow-text"></span>
+                        <p>Radio:</p><br>
+                        <input type="text" id="radio"><br>
+                        <a class="waves-effect waves-light btn" onclick="diametro()">Diametro</a>
+                        <a class="waves-effect waves-light btn" onclick="circunferencia()">Circunferencia</a>
+                        <a class="waves-effect waves-light btn" onclick="area()">Área</a><br><br>
+                        <input type="text" id="resultado" size="30">
+                    </div>    
+                </div>
+            </div>
     <br> <br> <br>
 
             <footer class="page-footer orange">
@@ -129,7 +133,7 @@
                   <script src="js/materialize.js"></script>
                   <script src="js/init.js"></script>
     <script >
-        var pi = 3.141516;
+        
         var resul = 0;
 
         function diametro() {
@@ -152,7 +156,7 @@
             var d=0;
             
             d = diametro();
-            c = pi * d;
+            c = Math.PI * d;
             console.log(c);
 
             resultado.value = "El resultado es: "+ c;
