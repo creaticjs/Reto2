@@ -181,29 +181,29 @@
             
         }
 
-        function comparar(d,ls,lp,ld) {
+        function comparar(d,letraMenor,letraPrincipal,letraMayor) {
             
             if (d == 5) {
-                r = r + lp;
+                r = r + letraPrincipal;
             } 
             else if (d == 4){
-                r = r + ls + lp;
+                r = r + letraMenor + letraPrincipal
             }
             else if (d == 4){
-                r = r + ls + lp;
+                r = r + letraMenor + letraPrincipal;
             }
             else if (d == 9){
-                r = r + ls + ld;
+                r = r + letraMenor + letraMayor;
             }
             else if (d>5 && d<9){
-                r = r + lp;
+                r = r + letraPrincipal;
                 for (i = 1; i<=d; i++) {
-                     r = r + ld; 
+                     r = r + letraMayor; 
                  }
             }
             else if (d>=1 && d<=3){
                 for (i = 1; i<=d; i++) {
-                     r = r + ls; 
+                     r = r + letraMenor; 
                  }
             }
             else if (d == 0){
